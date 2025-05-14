@@ -58,7 +58,6 @@ tk.Button(root, text="Subtract", width=10, command=subtract).grid(row=2, column=
 tk.Button(root, text="Multiply", width=10, command=multiply).grid(row=3, column=0, pady=5)
 tk.Button(root, text="Divide", width=10, command=divide).grid(row=3, column=1, pady=5)
 
-# New Clear Button
 tk.Button(root, text="Clear", width=22, command=clear, bg="lightgray").grid(row=4, column=0, columnspan=2, pady=5)
 
 result_var = tk.StringVar()

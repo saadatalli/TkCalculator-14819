@@ -37,11 +37,14 @@ def divide():
     except ZeroDivisionError:
         messagebox.showerror("Math error", "Cannot divide by zero.")
 
-# GUI Setup
+def clear():
+    entry1.delete(0, tk.END)
+    entry2.delete(0, tk.END)
+    result_var.set("Result:")
+
 root = tk.Tk()
 root.title("Simple Calculator")
 
-# Widgets
 tk.Label(root, text="Enter first number:").grid(row=0, column=0, padx=10, pady=5)
 entry1 = tk.Entry(root)
 entry1.grid(row=0, column=1, pady=5)
@@ -55,8 +58,10 @@ tk.Button(root, text="Subtract", width=10, command=subtract).grid(row=2, column=
 tk.Button(root, text="Multiply", width=10, command=multiply).grid(row=3, column=0, pady=5)
 tk.Button(root, text="Divide", width=10, command=divide).grid(row=3, column=1, pady=5)
 
+tk.Button(root, text="Clear", width=22, command=clear, bg="lightgray").grid(row=4, column=0, columnspan=2, pady=5)
+
 result_var = tk.StringVar()
 result_var.set("Result:")
-tk.Label(root, textvariable=result_var, font=("Arial", 12)).grid(row=4, columnspan=2, pady=10)
+tk.Label(root, textvariable=result_var, font=("Arial", 12)).grid(row=5, columnspan=2, pady=10)
 
 root.mainloop()
